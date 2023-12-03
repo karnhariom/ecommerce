@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .msg{
+            display: none;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="myFunction()">
+        Enter name: <input type="text" name="fname" required>
+        <button type="submit">Submit</button>
+        <p class="msg">success</p>
+      </form>
+      
+      <script>
+      function myFunction() {
+        event.preventDefault();
+        msg = document.querySelector('.msg');
+        msg.style.display = "block";
+      }
+      </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Ecommerce Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">LOGO</a>
+        <ul class="navitems">
+            <li><a href="/index.html" class="navlinks">Home</a></li>
+            <li><a href="#" class="navlinks">About</a></li>
+            <li><a href="#" class="navlinks">Contact</a></li>
+            <li><a href="/myprofile.html" class="navlinks">My Profile</a></li>
+            <li><a href="/cart.html" class="navlinks">Cart</a></li>
+        </ul>
+    </header>
+
+    <div class="titlebox">
+        <h2 class="t-center">Your Cart</h2>
+    </div>
+    
+
+    <div class="container cart-grid">
+        <div class="cart-left">
+            <div class="notice">
+                <h2>Get Free Shipping on order above $99.99</h2>
+            </div>
+            <table class="cart-table" id="cartTable">
+                <thead>
+                    <tr>
+                        <!-- <th>Sr.no</th> -->
+                        <th>Your Product</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!-- <td>01</td> -->
+                        <td>Apple (1 Kg)</td>
+                        <td>$8.99</td>
+                        <td><button  class="r_btn" onclick="deleteRow(this)">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <!-- <td>02</td> -->
+                        <td>Milk (1 L)</td>
+                        <td>$8.99</td>
+                        <td><button  class="r_btn" onclick="deleteRow(this)">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <!-- <td>03</td> -->
+                        <td>Orange (1 Kg)</td>
+                        <td>$8.99</td>
+                        <td><button  class="r_btn" onclick="deleteRow(this)">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="cart-right">
+            <div class="summary">
+                <div>
+                    <h2>Summary</h2>
+                </div>
+                <div class="c_form">
+                    <form>
+                        <input type="text" placeholder="Coupon Code">
+                        <button type="submit">Apply Coupon</button>
+                    </form>
+                </div>
+                <div class="fbox">
+                    <h3>Subtotal</h3>
+                    <p>$55.24</p>
+                </div>
+                <div class="fbox">
+                    <h3>Discount (10% OFF)</h3>
+                    <p>- $5.52</p>
+                </div>
+                <div class="fbox">
+                    <h3>Shipping Charge</h3>
+                    <p>$5.99</p>
+                </div>
+                <div class="fbox">
+                    <h3>Total</h3>
+                    <p>$55.99</p>
+                </div>
+                <a href="" class="checkout">CHECKOUT</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
