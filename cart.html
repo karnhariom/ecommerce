@@ -74,19 +74,19 @@
                 </div>
                 <div class="fbox">
                     <h3>Subtotal</h3>
-                    <p>$55.24</p>
+                    <p id="subtotal"></p>
                 </div>
                 <div class="fbox">
                     <h3>Discount (10% OFF)</h3>
-                    <p>- $5.52</p>
+                    <p id="discount">- </p>
                 </div>
                 <div class="fbox">
                     <h3>Shipping Charge</h3>
-                    <p>$5.99</p>
+                    <p id="shippingCharge"></p>
                 </div>
                 <div class="fbox">
                     <h3>Total</h3>
-                    <p>$55.99</p>
+                    <p id="total"></p>
                 </div>
                 <a href="" class="checkout">CHECKOUT</a>
             </div>
@@ -94,8 +94,44 @@
     </div>
 
 
-
-    <script src="script.js"></script>
+    <script>
+        // Update cart on window load
+        window.onload = function () {
+            updateCart();
+        };
+    
+        function updateCart() {
+            var cartTable = document.getElementById("cartTable");
+            var rows = cartTable.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+    
+            var subtotal = 0;
+            var discount = 0.1; // 10% discount
+            var shippingCharge = 5.99;
+    
+            for (var i = 0; i < rows.length; i++) {
+                var priceCell = rows[i].getElementsByTagName("td")[1];
+                var price = parseFloat(priceCell.textContent.replace("$", ""));
+                subtotal += price;
+            }
+    
+            var discountAmount = subtotal * discount;
+            var total = subtotal - discountAmount + shippingCharge;
+    
+            document.getElementById("subtotal").textContent = "$" + subtotal.toFixed(2);
+            document.getElementById("discount").textContent = "- $" + discountAmount.toFixed(2);
+            document.getElementById("shippingCharge").textContent = "$" + shippingCharge.toFixed(2);
+            document.getElementById("total").textContent = "$" + total.toFixed(2);
+        }
+    
+        function deleteRow(button) {
+            var row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+            updateCart();
+        }
+    </script>
+    
+    
+    <!-- <script src="script.js"></script> -->
 </body>
 
 </html>
